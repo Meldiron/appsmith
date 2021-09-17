@@ -1,0 +1,32 @@
+{
+ "form": [
+  {
+   "sectionName": "Details",
+   "id": 1,
+   "children": [
+    {
+     "label": "API Endpoint",
+     "configProperty": "datasourceConfiguration.url",
+     "controlType": "INPUT_TEXT",
+     "isRequired": true,
+     "placeholderText": "http://localhost/v1"
+    },
+    {
+     "label": "Project ID",
+     "configProperty": "datasourceConfiguration.projectid",
+     "controlType": "INPUT_TEXT",
+     "isRequired": true,
+     "placeholderText": "6130e782c57a7"
+    },
+    {
+     "label": "API Key",
+     "configProperty": "datasourceConfiguration.authentication.password",
+     "controlType": "INPUT_TEXT",
+     "dataType": "PASSWORD",
+     "placeholderText": "f26b142852e8...",
+     "encrypted": true
+    }
+   ]
+  }
+ ]
+}

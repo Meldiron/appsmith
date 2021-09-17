@@ -3186,4 +3186,24 @@ public class DatabaseChangelog {
             mongoTemplate.save(mongoAction);
         }
     }
+
+    // @ChangeSet(order = "088", id = "add-appwrite-plugin", author = "")
+    // public void addAppwritePlugin(MongockTemplate mongoTemplate) {
+    //     Plugin plugin = new Plugin();
+    //     plugin.setName("Appwrite");
+    //     plugin.setType(PluginType.DB);
+    //     plugin.setPackageName("appwrite-plugin");
+    //     plugin.setUiComponent("DbEditorForm");
+    //     plugin.setResponseType(Plugin.ResponseType.JSON);
+    //     plugin.setIconLocation("XXX"); // TODO: Update with Appwrite ucin
+    //     plugin.setDocumentationLink("XXX"); // TODO: Update with Appsmith docs on how to use Appwrite
+    //     plugin.setDefaultInstall(true);
+    //     try {
+    //         mongoTemplate.insert(plugin);
+    //     } catch (DuplicateKeyException e) {
+    //         log.warn(plugin.getPackageName() + " already present in database.");
+    //     }
+
+    //     installPluginToAllOrganizations(mongoTemplate, plugin.getId());
+    // }
 }
