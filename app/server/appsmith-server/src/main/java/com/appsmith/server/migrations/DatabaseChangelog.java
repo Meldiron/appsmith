@@ -3187,23 +3187,27 @@ public class DatabaseChangelog {
         }
     }
 
-    // @ChangeSet(order = "088", id = "add-appwrite-plugin", author = "")
-    // public void addAppwritePlugin(MongockTemplate mongoTemplate) {
-    //     Plugin plugin = new Plugin();
-    //     plugin.setName("Appwrite");
-    //     plugin.setType(PluginType.DB);
-    //     plugin.setPackageName("appwrite-plugin");
-    //     plugin.setUiComponent("DbEditorForm");
-    //     plugin.setResponseType(Plugin.ResponseType.JSON);
-    //     plugin.setIconLocation("XXX"); // TODO: Update with Appwrite ucin
-    //     plugin.setDocumentationLink("XXX"); // TODO: Update with Appsmith docs on how to use Appwrite
-    //     plugin.setDefaultInstall(true);
-    //     try {
-    //         mongoTemplate.insert(plugin);
-    //     } catch (DuplicateKeyException e) {
-    //         log.warn(plugin.getPackageName() + " already present in database.");
-    //     }
+    @ChangeSet(order = "088", id = "add-appwrite-plugin", author = "")
+    public void addAppwritePlugin(MongockTemplate mongoTemplate) {
+        System.out.println("Installing Appwrite plugin ...");
 
-    //     installPluginToAllOrganizations(mongoTemplate, plugin.getId());
-    // }
+        Plugin plugin = new Plugin();
+        plugin.setName("Appwrite");
+        plugin.setType(PluginType.DB);
+        plugin.setPackageName("appwrite-plugin");
+        plugin.setUiComponent("DbEditorForm");
+        plugin.setResponseType(Plugin.ResponseType.JSON);
+        plugin.setIconLocation("https://s3.us-east-2.amazonaws.com/assets.appsmith.com/ElasticSearch.jpg");
+        plugin.setDocumentationLink("https://docs.appsmith.com/v/v1.2.1/datasource-reference/querying-elasticsearch");
+        // TODO: Update with Appwrite icon
+        // TODO: Update with Appsmith docs on how to use Appwrite
+        plugin.setDefaultInstall(true);
+        try {
+            mongoTemplate.insert(plugin);
+        } catch (DuplicateKeyException e) {
+            log.warn(plugin.getPackageName() + " already present in database.");
+        }
+
+        installPluginToAllOrganizations(mongoTemplate, plugin.getId());
+    }
 }
